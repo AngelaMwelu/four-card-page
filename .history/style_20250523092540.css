@@ -1,0 +1,159 @@
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fafafa;
+  color: #4d4f62;
+  min-height: 100vh;
+  margin: 0;
+  padding: 80px 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.container {
+  max-width: 1110px;
+  width: 100%;
+  margin: 0 auto;
+  flex: 1;
+}
+
+
+.about {
+  text-align: center;
+  max-width: 540px;
+  margin: 0 auto 64px;
+}
+
+.about h3 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.about h3:first-child {
+  font-weight: 200;
+}
+
+.about h3:last-child {
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.about p {
+  font-size: 15px;
+  line-height: 25px;
+  color: #a3a5ae;
+  margin: 0;
+}
+
+.Card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.Supervisor,
+.Team-Builder,
+.Karma,
+.Calculator {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 15px 30px -11px rgba(131, 166, 210, 0.5);
+  padding: 28px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.Supervisor { border-top: 4px solid #44d3d2; }
+.Team-Builder { border-top: 4px solid #ea5454; }
+.Karma { border-top: 4px solid #fcae4a; }
+.Calculator { border-top: 4px solid #549ef2; }
+
+
+.Supervisor {
+  grid-row: 1 / 3;
+  align-self: center;
+}
+
+.Team-Builder {
+  grid-column: 2;
+}
+
+.Karma {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.Calculator {
+  grid-column: 3;
+  grid-row: 1 / 3;
+  align-self: center;
+}
+
+
+.Supervisor h4,
+.Team-Builder h4,
+.Karma h4,
+.Calculator h4 {
+  font-size: 20px;
+  margin: 0 0 6px;
+}
+
+.Supervisor p,
+.Team-Builder p,
+.Karma p,
+.Calculator p {
+  font-size: 13px;
+  line-height: 23px;
+  color: #a3a5ae;
+  margin: 0 0 40px;
+}
+
+/* Card icons (add these in your HTML) */
+.Supervisor, .Team-Builder, .Karma, .Calculator {
+  position: relative;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+}
+
+
+/* ===== Footer ===== */
+footer {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.attribution {
+  font-size: 11px;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 1400px) {
+  .Card {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .Supervisor,
+  .Team-Builder,
+  .Karma,
+  .Calculator {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+

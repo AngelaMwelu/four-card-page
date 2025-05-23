@@ -1,0 +1,286 @@
+body{
+    background: hsl(210, 29%, 93%);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    min-height: 100hv;
+    box-sizing:border-box;
+    margin: 0;
+    text-align: center; 
+}
+
+
+.Card {
+  max-width: 1110px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+.about {
+  max-width: 540px;
+  margin: 0 auto 64px;
+}
+
+.about h3 {
+  font-size: 24px;
+  font-weight: 275;
+  letter-spacing: 0.17px;
+  margin: 0;
+}
+.about p {
+  font-size: 15px;
+  line-height: 25px;
+  letter-spacing: 0.1px;
+  opacity: 0.5;
+  margin: 0;
+}
+Card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.Supervisor,
+.Team-Builder,
+.Karma,
+.Calculator {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 15px 30px -11px rgba(131, 166, 210, 0.5);
+  padding: 28px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+Supervisor { border-top: 4px solid #44d3d2; }
+.Team-Builder { border-top: 4px solid #ea5454; }
+.Karma { border-top: 4px solid #fcae4a; }
+.Calculator { border-top: 4px solid #549ef2; }
+
+/* Card positioning */
+.Supervisor {
+  grid-row: 1 / 3;
+  align-self: center;
+}
+
+.Team-Builder {
+  grid-column: 2;
+}
+
+.Karma {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.Calculator {
+  grid-column: 3;
+  grid-row: 1 / 3;
+  align-self: center;
+}
+
+/* Card content styles */
+.Supervisor h4,
+.Team-Builder h4,
+.Karma h4,
+.Calculator h4 {
+  font-size: 20px;
+  margin: 0 0 6px;
+}
+
+.Supervisor p,
+.Team-Builder p,
+.Karma p,
+.Calculator p {
+  font-size: 13px;
+  line-height: 23px;
+  letter-spacing: 0.09px;
+  opacity: 0.5;
+  margin: 0 0 40px;
+}
+
+/* Card icons (add these in your HTML) */
+.Supervisor::after,
+.Team-Builder::after,
+.Karma::after,
+.Calculator::after {
+  content: '';
+  display: block;
+  width: 57px;
+  height: 57px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 28px;
+  bottom: 28px;
+}
+
+.Supervisor::after { background-image: url('icon-supervisor.svg'); }
+.Team-Builder::after { background-image: url('icon-team-builder.svg'); }
+.Karma::after { background-image: url('icon-karma.svg'); }
+.Calculator::after { background-image: url('icon-calculator.svg'); }
+
+/* ===== Footer ===== */
+footer {
+  margin-top: 80px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 900px) {
+  .Card {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+  
+  .Supervisor,
+  .Team-Builder,
+  .Karma,
+  .Calculator {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 375px) {
+  body {
+    padding: 85px 32px;
+  }
+  
+  .about {
+    margin-bottom: 76px;
+  }
+  
+  .about h3 {
+    font-size: 24px;
+  }
+}
+
+Key Improvements Made:
+
+    Modern Layout:
+
+        Used CSS Grid for the card container with a 3-column layout
+
+        Positioned Supervisor and Calculator cards to span vertically
+
+        Centered the entire layout on the page
+
+    Typography:
+
+        Added Poppins font (include in HTML head: <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">)
+
+        Created visual hierarchy with font weights (light for first heading, bold for second)
+
+    Visual Design:
+
+        Added colored top borders to each card
+
+        Included subtle box shadows for depth
+
+        Space for icons (add SVG files to your project)
+
+    Responsive Design:
+
+        Stacked cards in a single column on mobile
+
+        Adjusted padding and margins for smaller screens
+
+    Accessibility:
+
+        Proper color contrast
+
+        Semantic HTML structure
+
+To complete the implementation:
+
+    Add the font link to your HTML head
+
+    Create an images folder and add the four icon SVG files
+
+    Make sure to fix the class names in your HTML (change "Team Builder" to "Team-Builder" to work with CSS)
+
+This will give you a professional, responsive layout that matches modern design standards.
+Card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+} what does this code do?
+
+The CSS code you're asking about creates a 3-column grid layout for your .Card container. Here's exactly what it does:
+css
+
+.Card {
+  display: grid;                /* Activates CSS Grid layout */
+  grid-template-columns: repeat(3, 1fr);  /* Creates 3 equal-width columns */
+  gap: 30px;                    /* Adds 30px spacing between grid items */
+}
+
+Breakdown of each property:
+
+    display: grid
+
+        Turns the .Card element into a grid container
+
+        All direct children (your feature cards) automatically become grid items
+
+    grid-template-columns: repeat(3, 1fr)
+
+        repeat(3, 1fr) creates 3 columns
+
+        1fr means each column takes up "1 fraction" of the available space
+
+        Result: 3 equal-width columns that grow/shrink with the container
+
+    gap: 30px
+
+        Adds 30 pixels of space between:
+
+            Columns (horizontal gap)
+
+            Rows (vertical gap)
+
+        Replaces old methods like margins between items
+
+Visual Representation:
+
+[ Column 1 ]    [ Column 2 ]    [ Column 3 ]
+(1fr width)     (1fr width)     (1fr width)
+|--30px gap--| |--30px gap--|
+
+How It Affects Your Layout:
+
+    Your four feature cards will be placed in this grid automatically
+
+    Without additional positioning, they would flow like this:
+
+    [Supervisor]   [Team-Builder]  [Calculator]
+    [Karma]        (empty)         (empty)
+
+    That's why your original CSS has additional positioning rules to make:
+
+        Supervisor span 2 rows (left column)
+
+        Calculator span 2 rows (right column)
+
+        Team-Builder and Karma in the middle column
+
+Key Benefits:
+
+    Responsive by default - Columns adjust to container width
+
+    Precise control - No float/clearfix hacks needed
+
+    Consistent spacing - gap handles spacing uniformly
+
+Would you like me to show how this works with your specific card layout? 😊
+New chat
